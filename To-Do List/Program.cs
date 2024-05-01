@@ -6,7 +6,42 @@
 
         static void Main(string[] args)
         {
-            AddTask();
+            while (true)
+            {
+
+                Console.WriteLine("1. Добавить новую задачу");
+                Console.WriteLine("2. Показать список всех задач");
+                Console.WriteLine("3. Удалить задачу");
+                Console.WriteLine("4. Выход \n");
+                Console.WriteLine("Выберите действие: ");
+
+                string choice = Console.ReadLine();
+
+                switch( choice)
+                {
+                    case "1":
+                        AddTask(); 
+                        break;
+
+                    case "2":
+                        ShowTasks();
+                        break;
+
+                    case "3":
+                        RemoveTask(); 
+                        break;
+
+                    case "4":
+                        return;
+
+                    default:
+                        Console.WriteLine("Неверный выбор. Попробуйте еще раз.");
+                        break;
+                }
+
+                Console.WriteLine();
+
+            }
         }
 
         static void AddTask()
