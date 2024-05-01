@@ -32,5 +32,25 @@
                 }
             }
         }
+
+        static void RemoveTask()
+        {
+            ShowTasks();
+            if( tasks.Count == 0)
+            {
+                return;
+            }
+
+            if ( int.TryParse(Console.ReadLine(), out int index ) && index >= 1 && index <= tasks.Count )
+            {
+                Console.WriteLine("Введите номер удаляемой задачи: ");
+                tasks.RemoveAt( index - 1 );
+                Console.WriteLine($"Задача под номером {index - 1} была успешно удалена.");
+            }
+            else
+            {
+                Console.WriteLine("Введен неверный номер задачи.");
+            }
+        }
     }
 }
